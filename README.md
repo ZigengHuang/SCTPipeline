@@ -1,12 +1,12 @@
 # SCTPipeline
-SCTPipeline provides a comprehensive default and custom parameter (Steps 8-10) version for both Foundation LLMS (ChatPGT-40 and Deepseek-R1).
+SCTPipeline provides a comprehensive default and custom parameter (Steps 8-10) version for both Foundation LLMs (ChatPGT-40 and Deepseek-R1).
 According different Foundation LLM,you can choose the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py".
 * Run this pipeline, you need to choose 1-4 option to prefined prompts according to domain-specific features (Default).
 * If you want to customized medical domain features (Phase 2, Steps 8-10), you can choose option 5:Customized domain-specific features.
 
 ## Phase 1-1: Obtain RUCT by speech-to-text tools (Steps 1-3)
-* Recommend：You use the "Phase 1-1_Whisper" file  to transcribe your recording audio to transcriptions based on whisper.
-* Optional, you can use the "Phase 1-1_Feishu" file to transcribe your recording audio to transcriptions based on Feishu.
+* Recommend：You use the "Phase 1-1_Whisper" file  to transcribe your recording audio to obtain RUCT based on whisper.
+* Optional, you can use the "Phase 1-1_Feishu" file to transcribe your recording audio to obtain RUCT based on Feishu.
 
 ## Phase 1-2,2,3: Pre-segment/transcription processing agent/prompts(Steps 4-23)
 
