@@ -1,5 +1,5 @@
 # SCTPipeline
-SCTPipeline provides a default parameters version and a customized parameters (Steps 8-10) version for two Foundation LLM (ChatGPT-4o and Deepseek-R1).
+SCTPipeline provides a comprehensive default and custom parameter (Steps 8-10) version for both Foundation LLMS (ChatPGT-40 and Deepseek-R1).
 According different Foundation LLM,you can choose the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py".
 * Run this pipeline,you need to choose 1-4 option to prefined prompts according to domain-specific features (Default).
 * If you want to customized medical domain features (Phase 2,Steps 8-10),you can choose option 5:Customized domain-specific features.
