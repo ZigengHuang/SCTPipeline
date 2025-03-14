@@ -20,6 +20,7 @@ The "Generation_SCT.py" is provided for the Steps 24-28 to generate SCT.
 
 ## Usage Example: 
 Take Deepseek-R1 as an example：
+
 1.If you use default parameter version (option 1-4) for Deepseek-R1:
 
 `python SCTPipeline_Deepseek-R1.py -i /Example/RUCT1.txt -k /medical/ -o /Output/SCT1.txt`
