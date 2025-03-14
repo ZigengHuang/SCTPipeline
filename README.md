@@ -5,7 +5,7 @@ According different Foundation LLM,you can choose the "SCTPipeline_ChatGPT-4o.py
 * If you want to customized medical domain features (Phase 2,Steps 8-10),you can choose option 5:Customized domain-specific features.
 
 ## Phase 1-1: Obtain RUCT by speech-to-text tools (Steps 1-3)
-* You use the "Phase 1-1_Whisper" file  to transcribe your recording audio to transcriptions based on whisper.
+* Recommend：You use the "Phase 1-1_Whisper" file  to transcribe your recording audio to transcriptions based on whisper.
 * Optional, you can use the "Phase 1-1_Feishu" file to transcribe your recording audio to transcriptions based on Feishu.
 
 ## Phase 1-2,2,3: Pre-segment/transcription processing agent/prompts(Steps 4-23)
