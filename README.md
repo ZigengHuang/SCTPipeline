@@ -26,8 +26,8 @@ The "Generation_SCT.py" is provided for the Steps 24-28.
 2. If you use customized version for Deepseek-R1:
 
 `python SCTPipeline_Deepseek-R1.py -i /Example/RUCT1.txt /Example/manually_orgnized_RCT1.txt -o /Output/SCT2.txt`
-![Workflow](https://github.com/user-attachments/assets/6b787e73-47bd-4dd4-9301-6ed1c503ff49)
-![Alt Text](image.jpg){:width="400px"}
+![Workflow](https://github.com/user-attachments/assets/6b787e73-47bd-4dd4-9301-6ed1c503ff49){:width="400px"}
+
 
 
 
