@@ -1,8 +1,8 @@
 # SCTPipeline
 SCTPipeline provides a default parameters version and a customized parameters (Steps 8-10) version for two Foundation LLM (ChatGPT-4o and Deepseek-R1).
 According different Foundation LLM,you can choose the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py".
-*Default parameter version provides in the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py"
-*Customized parameter version provides in the "SCTPipeline_ChatGPT-4o_customized.py"or "SCTPipeline_Deepseek-R1_customized.py"
+* Default parameter version provides in the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py"
+* Customized parameter version provides in the "SCTPipeline_ChatGPT-4o_customized.py"or "SCTPipeline_Deepseek-R1_customized.py"
 
 ## Phase 1-1: Obtain RUCT by speech-to-text tools (Steps 1-3)
 You use the "Phase 1-1_Whisper" file  to transcribe your recording audio to transcriptions based on whisper.
