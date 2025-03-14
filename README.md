@@ -12,11 +12,14 @@ Optional, you can use the "Phase 1-1_Feishu" file to transcribe your recording a
 * Phase 2:Developing transcription processing agent;
 * Phase 3:Establishing prompts for SCT (Steps 4-23)
 Plase use the "SCTpipeline.py" to run Steps 4-23.
-python SCTpipeline.py -i /Your_Path/... -o /YourSaveSCT_Path/...
+`python SCTpipeline.py -i /Your_Path/... -o /YourSaveSCT_Path/...`
 
 
 ## Phase 4:Generation of SCT (Steps 24-28)
 The "Generation_SCT.py" is for the Steps 24-28.
 
 ## Example: 
+1.If you use default parameter version:
 `python SCTpipeline.py -i /Example/RUCT1.txt -o /Output/SCT1.txt`
+2. If you use customized version:
+`python SCTpipeline_customized.py -i /Example/RUCT1.txt /Example/manually_orgnized_RCT1.txt -o /Output/SCT2.txt`
