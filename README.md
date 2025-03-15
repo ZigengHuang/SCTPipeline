@@ -9,7 +9,7 @@ According different Foundation LLMs, you can choose the "SCTPipeline_ChatGPT-4o.
 * Recommend：You use the "Phase 1-1_Whisper" file  to transcribe your recording audio to obtain RUCT based on whisper.
 * Optional, you can use the Feishu to transcribe your recording audio to obtain RUCT based on Feishu web page.
 
-## Phase 1-2,2,3,4: Pre-segment/transcription processing agent/prompts/Generation of SCT(Steps 4-28)
+## Phase 1-2,2,3,4: Pre-segment/Transcription processing agent/Prompts for SCT/Generation of SCT(Steps 4-28)
 
 * Phase 1-2: Pre-segment RUCT into batches based on the number of characters (Steps 4-6);
 * Phase 2: Developing transcription processing agent (Steps 7-13);
