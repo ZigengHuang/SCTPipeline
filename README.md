@@ -1,9 +1,9 @@
 # SCTPipeline
 SCTPipeline provides a comprehensive default and custom parameter (Steps 8-10) version for both Foundation LLMs (ChatPGT-40 and Deepseek-R1).
 According different Foundation LLMs, you can choose the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py".
-* Run this pipeline, you can choose 1-4 option (Health checkups, Routine outpatient guidance, Surgery, and Hospitalization guidance) to prefined prompts according to domain-specific features (Default).The pipeline provides four medical knowlegde for the 1-4 options. According to your option, you need to change the 'medical_knowledge' to make the pipeline work well. Critical:Replace the folder name with 'medical_knowledge'.
+* Run this pipeline, you can choose 1-4 option (Health checkups, Routine outpatient guidance, Surgery, and Hospitalization guidance) to prefined prompts according to domain-specific features (Default).The pipeline provides four medical knowlegde for the 1-4 options in 'medical_knowledge_backup'folder. According to your option, you need to change the 'medical_knowledge' to make the pipeline work well. Critical:Replace the folder name with 'medical_knowledge'.
   
-* If you want to customized medical domain features (Phase 2, Steps 8-10), you can choose option 5:Customized domain-specific features.You need to ensure SCT manually organized add in the 'option 5: General medical knowledge' folder and replace the folder name with 'medical_knowledge'.
+* If you want to customized medical domain features (Phase 2, Steps 8-10), you can choose option 5_Customized domain-specific features.You need to ensure SCT manually organized add in the 'option 5: General medical knowledge' folder and replace the folder name with 'medical_knowledge'.
 
 We provide an example of surgery to run the pipeline.'medical knowledge' folder contain surgery knowledge files to support processing the RUCT file in the 'Example' folder.
 
