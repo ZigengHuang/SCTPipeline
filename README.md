@@ -1,9 +1,9 @@
 # SCTPipeline
 SCTPipeline provides a comprehensive default and custom parameter (Steps 8-10) version for both Foundation LLMs (ChatPGT-40 and Deepseek-R1).
 According different Foundation LLMs, you can choose the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py".
-* Run this pipeline, you can choose 1-4 option (Health checkups, Routine outpatient guidance, Surgery, and Hospitalization guidance) to prefined prompts according to domain-specific features (Default).The pipeline provides four medical knowlegde for the 1-4 options in './medical_knowledge_backup'folder. 
+* Run this pipeline, you can choose 1-4 option (Health checkups, Routine outpatient guidance, Surgery, and Hospitalization guidance) to prefined prompts according to domain-specific features (Default). The pipeline provides four medical knowlegde for the 1-4 options in './medical_knowledge_backup' folder. 
   
-* If you want to customized medical domain features (Phase 2, Steps 8-10), you can choose option 5_Customized domain-specific features.You need to ensure SCT manually organized add in the './medical_knowledge_backup/option 5_General medical knowledge' folder.
+* If you want to customized medical domain features (Phase 2, Steps 8-10), you can choose option 5_Customized domain-specific features. You need to ensure SCT manually organized add in the './medical_knowledge_backup/option 5_General medical knowledge' folder.
 
 ## Phase 1-1: Obtain RUCT by speech-to-text tools (Steps 1-3)
 * Recommend：You use the "Phase 1-1_Whisper" file  to transcribe your recording audio to obtain RUCT based on whisper.
