@@ -1,5 +1,5 @@
 # SCTPipeline
-SCTPipeline provides a comprehensive default and custom parameter (Steps 8-10) version for both Foundation LLMs (ChatPGT-40 and Deepseek-R1).
+SCTPipeline provides a comprehensive default and custom parameter (Steps 8-10) version for both Foundation LLMs (ChatGPT-4o and Deepseek-R1).
 According different Foundation LLMs, you can choose the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py".
 * Run this pipeline, you can choose 1-4 option (Health checkups, Routine outpatient guidance, Surgery, and Hospitalization guidance) to prefined prompts according to domain-specific features (Default). The pipeline provides four medical knowlegde for the 1-4 options in './medical_knowledge_backup' folder. 
   
