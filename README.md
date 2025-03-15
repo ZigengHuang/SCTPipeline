@@ -13,7 +13,7 @@ According different Foundation LLMs, you can choose the "SCTPipeline_ChatGPT-4o.
 
 * Phase 1-2: Pre-segment RUCT into batches based on the number of characters (Steps 4-6);
 * Phase 2: Developing transcription processing agent (Steps 7-13);
-  In this phase, you need to ensure './medical_knowledge/' folder include Department medical knowledge datasets (The SCT.txt for SCTPipleline or your customized SCT.txt), General medical knowledge datasets,and Dialect dictionaries (optional).
+  In this phase, you need to ensure './medical_knowledge/' folder include Department medical knowledge datasets (The SCT.txt for SCTPipleline or your customized SCT.txt), General medical knowledge datasets and Dialect dictionaries (optional).
 * Phase 3: Establishing prompts for SCT (Steps 14-23)
 * Phase 4: Generation of SCT (Steps 24-28)
 
