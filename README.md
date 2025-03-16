@@ -10,7 +10,7 @@ According different Foundation LLMs, you can choose the "SCTPipeline_ChatGPT-4o.
 * Optional, you can use the Feishu to transcribe your recording audio to obtain RUCT based on Feishu web page.
 
 ## Phase 1-2,2,3,4: Pre-segment/Transcription processing agent/Prompts for SCT/Generation of SCT(Steps 4-28)
-
+These sections all contain in the "SCTPipeline_ChatGPT-4o.py" or "SCTPipeline_Deepseek-R1.py".
 * Phase 1-2: Pre-segment RUCT into batches based on the number of characters (Steps 4-6);
 * Phase 2: Developing transcription processing agent (Steps 7-13);
   In this phase, you need to ensure './medical_knowledge/' folder include Department medical knowledge datasets (The SCT.txt for SCTPipeline or your customized SCT.txt), General medical knowledge datasets and Dialect dictionaries (optional).
