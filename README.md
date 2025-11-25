@@ -204,22 +204,6 @@ python genuine_agent.py \
 | --planner-model | LLM for planning tasks | gpt-4o |
 | --domain | Clinical specialty index (1-5) | Optional |
 | --resume | Resume batch processing| Flag |
-		
-
-## Project Structure
-```text
-medical-transcription-agent/
-├── genuine_agent.py                 # CLI entry point & batch processing
-├── assistant_agent.py               # Core agent implementation
-├── medical_transcription_pipeline.py # Main processing pipeline
-├── Domain Specific Prompts.json     # Clinical domain resources
-├── Features of patient emotions.json # Emotion segmentation data
-├── prompt指南.txt                   # Tool prompt templates
-├── Data_processing/                 # Utility scripts
-│   ├── csv2txt.py
-│   └── additional_utilities
-└── README.md                        # Project documentation
-```
 
 ## License
 This project is licensed under the MIT License. See LICENSE file for complete details.
