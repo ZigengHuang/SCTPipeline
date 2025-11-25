@@ -1,0 +1,157 @@
+GPT
+def _remove_noise_chunk(self, text: str) -> str:
+    messages =
+    [
+        {"role": "user", "content": f"""Please process the medical conversation transcriptions according to the following requirements:
+        Objective:
+        Remove noise from the medical conversation, such as hospital announcements or a one-side phone medical conversations.
+        Method:
+        1. Identify Noise: When a segment of the medical conversations is interrupted, determine whether it is hospital announcements noise or phone medical conversations based on its content.
+        2. Hospital announcements content: Typically in the form of imperative sentences, with the same phrase repeated twice or more. The main content usually includes statements such as 'Please go to Room1 for consultation'.
+        3. One-side phone medical conversations: Typically only one person asks or answers a question, without corresponding response. Such as 'Hello, hi... okay... I understand... I will call you back shortly.'
+        4. Ensure that the final output is a clear, logically consistent medical conversation transcription that preserves the original language, retains the features of natural spoken expression.
+        Rules:
+        1. Keep the SAME number of lines as input, do not delete the entire content of a line.
+        2. Do not merge or split lines.
+        3. If no cleaning needed, return the line unchanged.
+        4. Do not add explanations after removing noise.
+        \n{text}"""}
+    ]
+def _correct_content_chunk(self, text: str) -> str:
+    domain_prompt = self.get_domain_prompt()
+    knowledge = self.load_knowledge()
+    messages =
+    [
+        {"role": "system", "content": f"{knowledge}\n\n{domain_prompt}"},
+        {"role": "user", "content": f"""Integrate the fragmented transcriptions into complete medical conversation transcriptions based on domain-specific features and medical knowledge. Make the following corrections accordingly:
+            Note:
+            1. Medical Terminology Correction: Due to potential issues with speech-to-text tools, medical terminology may be incorrectly transcribed. Verify and correct the medical terminology, but keep the colloquial expression without over-specialization.
+            2. Near-homophone Correction: If some words seem out of place in the medical conversations, they may be homophones or dialect-related errors. Based on context, domain-specific features and medical knowledge, infer and correct ambiguous terms. For case, '车（che）线'could be a misinterpretation of '拆（chai）线' when referring to surgical suture removal.
+            3. Correction Scope: Only correct individual words; do not change the original colloquial sentence structure or expression.
+            Rules:
+            1. Keep the SAME number of lines as input, do not delete the entire content of a line.
+            2. Do not merge or split lines.
+            3. If no cleaning needed, return the line unchanged.
+            4. Ensure that the final output is a clear, logically consistent medical conversation transcription that preserves the original language, retains the features of natural spoken expression.
+            \n{text}"""}
+    ]
+def _identify_speakers_chunk(self, text: str) -> str:
+    messages =
+    [
+        {"role": "system", "content": """
+        If the speaker label is incorrect (for example, the words that are supposed to be spoken by a Doctor are labeled as those by a Patient), correct the speaker label. Label as:
+        - Doctor:
+        - Patient:
+        - Others:
+
+        Rules:
+        - Keep the SAME number of lines as input.
+        - Do not merge or split lines.
+        - Keep original content after the label.
+        """},
+        {"role": "user", "content": text}
+    ]
+
+
+Qwen
+remove_noise
+messages = [
+{"role": "user", "content": f"""
+You are a medical conversation cleaner.
+Your goal is to **aggressively remove irrelevant or noisy content**, keeping only text that clearly belongs to a real medical conversation.
+
+### Data Format
+[ID] [speaker label]: [content]
+
+### What Counts as Noise
+- **Hospital announcements** (e.g., “Please go to Room 1 for consultation”).
+- **One-sided phone calls** (e.g., “Hello… okay… bye.”).
+- **Non-medical speech**, meaningless chatter, or random interjections (“嗯”, “哎呀”, “对对对”, etc.).
+- **Gibberish**, incomplete, or fragmented text with no clear medical meaning.
+- **Background staff or unrelated talk**.
+- **Duplicate or repeated meaningless phrases**.
+
+### How to Process
+- Be **bold and decisive** — if a line **seems mostly irrelevant**, treat it as noise.
+- If the medical intent or logic **cannot be clearly inferred**, treat it as noise.
+- Replace **the [content] of any line that is mostly or entirely noise** with '[Noise removed]'.
+- If a line contains both noise and meaningful content, **keep only the meaningful medical part**, deleting the rest.
+- If a line is clearly part of a real doctor–patient dialogue, keep it unchanged.
+
+### Format Rules (MUST FOLLOW)
+- Keep **exactly the same number of lines** as input.
+- **Preserve the [ID] tag** at the beginning of each line exactly as input.
+- Do **NOT** merge, split, reorder, or delete lines.
+- Keep [speaker label] (e.g., “Doctor:”, “Patient:”).
+- Output only cleaned lines, no explanations.
+- Do not change the language of the conversation.
+
+Be confident and aggressive: it is better to **delete questionable or unclear lines** than to keep irrelevant noise.
+Now clean the following text:
+{numbered_text}
+"""}
+]
+
+correct_content
+messages = [
+{"role": "user", "content": f"""
+You are a medical transcription corrector.
+Your task is to **actively correct, refine, and smooth** the following conversation so it reads like a coherent, natural doctor–patient dialogue.
+
+### Data Format
+[ID] [speaker label]: [content]
+
+### What You Must Fix
+1. **Medical terminology** — correct misheard or misspelled medical terms confidently.
+2. **Homophones or dialect words** — infer the intended words from context (e.g., “车线” → “拆线”).
+3. **Broken grammar or word order** — reorganize them into fluent spoken sentences.
+4. **Incomplete or unclear lines** — complete or correct them based on common medical reasoning.
+5. **Remove filler words** (e.g., “啊”, “嗯”, “就是”, “那个”) when excessive, while keeping a natural spoken tone.
+
+
+### Format Rules (STRICT)
+- Keep **exactly the same number of lines** as input.
+- **Preserve each [ID] tag** exactly as input.
+- **Do NOT** merge, split, reorder, or delete lines.
+- Keep [speaker label] (e.g., “Doctor:”, “Patient:”).
+- Output only corrected conversation, no explanations.
+- Do not change the language of the conversation.
+
+Now correct and polish the following transcription:
+{numbered_text}
+"""}
+]
+
+identify_speakers
+messages = [
+{"role": "system", "content": """
+You are a speaker labeler for medical dialogues.
+Your task is to ignore the original [speaker label] and re-label the correct [speaker label] for each line based on the line's [content] and its context.
+Be confident.
+
+### Data Format
+[ID] [speaker label]: [content]
+
+### Valid Labels
+Doctor:
+Patient:
+Others:
+
+### How to Decide
+- “Doctor” gives medical advice, asks examination questions, or provides explanations.
+- “Patient” describes symptoms, asks for guidance, or expresses concerns.
+- “Others” include family members, assistants, or background staff.
+- If the [content] of this line is '[Noise removed]', label it as "Others".
+
+### Behavior Rules
+- Do not hesitate to label roles when content clearly implies another speaker.
+
+### Format Rules (STRICT)
+- Keep **exactly the same number of lines** as input.
+- Preserve every [ID] exactly as input.
+- Do **NOT** merge, split, delete, or reorder lines.
+- Keep the **original content after the label** unchanged.
+- Output only relabeled lines, nothing else.
+"""},
+{"role": "user", "content": numbered_text}
+]
