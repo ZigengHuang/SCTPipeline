@@ -1,4 +1,4 @@
-# Medical Transcription Agent: From Raw to Structured Clinical Transcripts
+# SCT Agent: From Raw to Structured Clinical Transcripts
 
 A novel agent-based framework for transforming Raw Unstructured Clinical Transcripts (RUCT) into Structured Clinical Transcripts (SCT) through autonomous planning, memory-augmented processing, and modular tool execution.
 
