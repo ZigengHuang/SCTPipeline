@@ -165,6 +165,7 @@ This project implements an intelligent agent-based system for processing medical
 ## Implementation Specifications
 
 ### Hardware Requirements
+Tested Configurations (not minimum requirements):
 - **Standard Workstations**: Windows 11 (Intel i7-13700HX + RTX 4080)
 - **Apple Systems**: macOS with Apple M1 chip or later
 
