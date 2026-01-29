@@ -20,8 +20,8 @@ import tempfile
 class Config:
     def __init__(self):
         # API
-        self.api_key = "sk-VsjuaibkxCYRKJB3zS9LiClI1RAkyKZrTKmIkruDAZkH57D1"
-        self.model_name = "qwen3-235b-a22b-instruct-2507" #deepseek-v3-2-exp/gpt-4o/gpt-5-mini/gemini-2.5-flash/gemini-2.5-pro/gemini-2.5-flash-nothinking/grok-4-fast/gpt-4o-mini/gpt-5-mini-ca/qwen3-235b-a22b-instruct-2507
+        self.api_key = "api_key"
+        self.model_name = "model_name" #deepseek-v3-2-exp/gpt-4o/gpt-5-mini/gemini-2.5-flash/gemini-2.5-pro/gemini-2.5-flash-nothinking/grok-4-fast/gpt-4o-mini/gpt-5-mini-ca/qwen3-235b-a22b-instruct-2507
         self.temperature = 0.1
 
         # Parameters for argparse
@@ -1002,4 +1002,5 @@ class MedicalTranscriptionPipeline:
 if __name__ == "__main__":
     config = Config()
     pipeline = MedicalTranscriptionPipeline(config)
+
     pipeline.run_pipeline()
