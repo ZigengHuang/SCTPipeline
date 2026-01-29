@@ -3,12 +3,6 @@ assistant_agent1027.py  —  Agent wrapper for the medical transcription pipelin
 Updated to match manuscript: Planner/Memory/Executor + Tool orchestration + validation/replanning.
 
 Usage examples:
-    python assistant_agent1027.py --input path/to/input.ruct --output path/to/output_dir --task "Please denoise, correct and identify speaker this clinical note"
-    python genuine_agent.py --input /Users/qinhao/PUMC_Project/Protocol/testdata --output /Users/qinhao/PUMC_Project/Protocol/agent/QWEN_Agent --task "Please denoise, correct and identify speaker this clinical note"
-    python genuine_agent.py --input /Users/qinhao/PUMC_Project/Protocol/testdata --output /Users/qinhao/PUMC_Project/Protocol/agent/QWEN_Agent --task "Please denoise, correct and identify speaker this clinical note" --resume --domain 1
-    python genuine_agent.py --input /Users/qinhao/PUMC_Project/Protocol/testdata --output /Users/qinhao/PUMC_Project/Protocol/agent/real_agent --task "Please denoise, correct and identify speaker this clinical note" --resume --domain 1
-    python genuine_agent.py --input /Users/qinhao/PUMC_Project/Protocol/testdata --output /Users/qinhao/PUMC_Project/Protocol/agent/real_agent --task "Segment this clinical note by topic directly, without denoising or correction." --resume --domain 1
-    python genuine_agent.py --tool segment_topic --input --input /Users/qinhao/PUMC_Project/Protocol/testdata --output /Users/qinhao/PUMC_Project/Protocol/agent/real_agent --task "Segment this clinical note by topic directly, without denoising or correction." --resume --domain 1
 """
 
 import argparse
