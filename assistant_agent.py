@@ -1,11 +1,5 @@
 """
 assistant_agent.py
-Usage:
-    python assistant_agent.py --input path/to/input.ruct --output path/to/output_dir --task "your tasks"
-    python assistant_agent.py --input /Users/qinhao/PUMC_Project/Protocol/agent/GPT_Agent/ruct.txt --output /Users/qinhao/PUMC_Project/Protocol/agent/GPT_Agent --task "Please denoise and correct this clinical note"
-    python assistant_agent.py --input /Users/qinhao/PUMC_Project/Protocol/agent/GPT_Agent/ruct.txt --output /Users/qinhao/PUMC_Project/Protocol/agent/GPT_Agent --task "Please denoise, correct and identify speaker this clinical note"
-    python assistant_agent.py --input /Users/qinhao/PUMC_Project/Protocol/pre_data/0424内窥镜.txt --output /Users/qinhao/PUMC_Project/Protocol/agent/GPT_Agent --task "Please denoise, correct and identify speaker this clinical note"
-    python assistant_agent.py --input /Users/qinhao/PUMC_Project/Protocol/testdata --output /Users/qinhao/PUMC_Project/Protocol/agent/QWEN_Agent --task "Please denoise, correct and identify speaker this clinical note"
 """
 import argparse
 import traceback
