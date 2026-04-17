@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+*.key
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project-specific
+*_output/
+results/
+batch_log.json
+summary_report.json
+*_steps.json
+*_execution_log.json
+
+# Knowledge bases (users provide their own)
+knowledge/health_checkups/
+knowledge/routine_outpatient/
+knowledge/surgery/
+knowledge/hospitalization/
+knowledge/general/
