@@ -33,10 +33,3 @@ batch_log.json
 summary_report.json
 *_steps.json
 *_execution_log.json
-
-# Knowledge bases (users provide their own)
-knowledge/health_checkups/
-knowledge/routine_outpatient/
-knowledge/surgery/
-knowledge/hospitalization/
-knowledge/general/
